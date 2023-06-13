@@ -1,0 +1,12 @@
+.header {
+  width: 1920px;
+  height: 70px;
+  display: flex;
+  background: #000;
+  align-items: center;
+  position: fixed;
+  opacity: 100%;
+  top: 0;
+  left: 0;
+  /* z-index: 5; */
+}
