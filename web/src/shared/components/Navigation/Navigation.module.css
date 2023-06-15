@@ -1,65 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+
 .logo {
-  /* top: 24px;
-  left: 368px; */
+  top: 24px;
+  left: 368px;
   width: 151px;
   height: 24px;
+  background: transparent 0% 0% no-repeat padding-box;
   opacity: 1;
+  cursor: pointer;
 }
 
-.cart {
-  top: 24px;
-  left: 1464px;
-  width: 23px;
+.musical-concerts {
+  top: 28px;
+  left: 567px;
+  width: 96px;
   height: 17px;
+  text-align: left;
+  font: normal normal bold 14px/17px Lato;
+  letter-spacing: -0.77px;
+  color: #d3d3d3;
   opacity: 1;
-  color: rgba(255, 72, 171, 1);
+  text-decoration: none;
+  margin-left: 25px;
+  cursor: pointer;
 }
 
-.nav-link {
+.standup-comedies {
+  top: 28px;
+  left: 685px;
+  width: 101px;
+  height: 17px;
+  text-align: left;
+  font: normal normal bold 14px/17px Lato;
+  letter-spacing: -0.77px;
+  color: #d3d3d3;
+  opacity: 1;
   text-decoration: none;
-  color: #fff;
+  cursor: pointer;
 }
 
 .search-bar {
-  width: 272px;
-  height: 42px;
-  border-radius: 50px;
+  top: 14px;
+  left: 987px;
+  width: 266px;
+  height: 36px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border-radius: 21px;
+  opacity: 1;
+  border: none;
 }
 
 li input::placeholder {
-  color: rgb(37, 37, 37);
-  font-weight: bold;
+  color: #393939;
+  text-align: left;
+  font: normal normal bold 16px/19px Lato;
+  letter-spacing: -0.88px;
+  opacity: 1;
 }
 
 li input {
   padding-left: 23px;
 }
 
-ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
+.login {
+  width: 102px;
+  height: 42px;
+  background-color: #ff48ab;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 1;
+  color: #000;
+  text-align: center;
+  font: normal normal 900 16px/19px Lato;
+  letter-spacing: -0.88px;
+  border: none;
+  cursor: pointer;
 }
 
-li {
-  margin: 10px;
+.create-account {
+  top: 14px;
+  left: 1404px;
+  width: 156px;
+  height: 42px;
+  border: 1px solid #ee47a0;
+  border-radius: 20px;
+  opacity: 1;
+  background-color: #000;
+  text-align: center;
+  font: normal normal 900 16px/19px sans-serif Lato;
+  letter-spacing: -0.88px;
+  color: #ffffff;
+  cursor: pointer;
 }
 
-ul li {
+.left-side {
   display: inline-block;
-}
-/* .left-side {
-  list-style: none;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .right-side {
   display: flex;
-  flex-direction: column;
+  gap: 10px;
+}
+
+ul li {
+  display: flex;
   justify-content: center;
   align-items: center;
-} */
+  gap: 10px;
+}

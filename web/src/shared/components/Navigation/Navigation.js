@@ -3,7 +3,6 @@ import { Link } from "react-router-dom/cjs/react-router-dom";
 import Header from "./Header";
 import styles from "./Navigation.module.css";
 import logo from "../../../assets/Path 1.svg";
-import cart from "../../../assets/cart-shopping-solid.svg";
 
 const Navigation = (props) => {
   return (
@@ -11,15 +10,15 @@ const Navigation = (props) => {
       <ul className={styles["left-side"]}>
         <li>
           <Link to="/">
-            <img src={logo} className={styles.logo} />
+            <img src={logo} className={styles.logo} alt="TicketBlaster logo" />
           </Link>
           <li>
-            <Link to="/concerts" className={styles["nav-link"]}>
+            <Link to="/concerts" className={styles["musical-concerts"]}>
               Musical Concerts
             </Link>
           </li>
           <li>
-            <Link to="/comedies" className={styles["nav-link"]}>
+            <Link to="/comedies" className={styles["standup-comedies"]}>
               Stand-up Comedy
             </Link>
           </li>
@@ -32,12 +31,12 @@ const Navigation = (props) => {
         </li>
         <li>
           <Link to="#">
-            <img src={cart} className={styles.cart} />
+            <button className={styles.login}>Log in</button>
           </Link>
         </li>
         <li>
           <Link to="#">
-            <img src="../../../assets/user-solid.png" />
+            <button className={styles["create-account"]}>Create Account</button>
           </Link>
         </li>
       </ul>
