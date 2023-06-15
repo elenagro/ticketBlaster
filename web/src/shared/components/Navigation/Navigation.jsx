@@ -30,12 +30,12 @@ const Navigation = (props) => {
           <input placeholder="Search" className={styles["search-bar"]} />
         </li>
         <li>
-          <Link to="#">
+          <Link to="/log-in">
             <button className={styles.login}>Log in</button>
           </Link>
         </li>
         <li>
-          <Link to="#">
+          <Link to="/register">
             <button className={styles["create-account"]}>Create Account</button>
           </Link>
         </li>

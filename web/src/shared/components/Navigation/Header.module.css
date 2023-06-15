@@ -10,5 +10,5 @@
   justify-content: space-around;
   position: fixed;
   opacity: 1;
-  z-index: 5;
+  /* z-index: 5; */
 }
