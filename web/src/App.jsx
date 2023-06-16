@@ -9,6 +9,7 @@ import {
 import Navigation from "./shared/components/Navigation/Navigation";
 import LogIn from "./main/pages/LogIn/LogIn";
 import CreateAccount from "./main/pages/CreateAccount/CreateAccount";
+import ForgotPassword from "./main/pages/ForgotPassword/ForgotPassword";
 
 const App = () => {
   return (
@@ -18,6 +19,9 @@ const App = () => {
         <Switch>
           <Route path="/log-in" exact>
             <LogIn />
+          </Route>
+          <Route path="/forgot-password" exact>
+            <ForgotPassword />
           </Route>
           <Route path="/register" exact>
             <CreateAccount />

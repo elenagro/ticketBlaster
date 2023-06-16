@@ -4,15 +4,16 @@ import styles from "./Input.module.css";
 
 const Input = (props) => {
   return (
-    <div>
+    <div className={styles["input-label"]}>
       <label htmlFor={props.htmlFor} className={styles.label}>
         {props.label}
       </label>
       <input
-        className={styles.input}
+        className={props.error ? styles.invalid : styles.valid}
         id={props.id}
         type={props.type}
-        placeholder={props.placeholder}
+        onChange={props.onChange}
+        value={props.value}
       />
     </div>
   );

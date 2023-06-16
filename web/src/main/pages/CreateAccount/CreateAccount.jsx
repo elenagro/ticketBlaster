@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
-import Title from "../../../shared/components/UI/Title";
-import Input from "../../../shared/components/UI/Input";
-import Button from "../../../shared/components/UI/Button";
+import Title from "../../../shared/components/FormElements/Title";
+import Input from "../../../shared/components/FormElements/Input";
+import Button from "../../../shared/components/FormElements/Button";
+import Wrapper from "../../../shared/components/FormElements/Wrapper";
 
 const CreateAccount = () => {
   return (
-    <div>
+    <Wrapper>
       <Title title="Create Account" />
       <Input htmlFor="name" label="Full Name" id="name" type="text" />
       <Input htmlFor="email" label="E-mail" id="email" type="text" />
@@ -18,8 +20,10 @@ const CreateAccount = () => {
         type="text"
       />
       <Button type="submit">Create Account</Button>
-      <Button>Already have an account?</Button>
-    </div>
+      <Link to="/log-in">
+        <Button>Already have an account?</Button>
+      </Link>
+    </Wrapper>
   );
 };
 
