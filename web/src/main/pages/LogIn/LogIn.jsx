@@ -7,7 +7,6 @@ import Input from "../../../shared/components/FormElements/Input";
 import Button from "../../../shared/components/FormElements/Button";
 import Wrapper from "../../../shared/components/FormElements/Wrapper";
 import Form from "../../../shared/components/FormElements/Form";
-import ForgotPassword from "../ForgotPassword/ForgotPassword";
 
 const LogIn = () => {
   return (
@@ -27,7 +26,15 @@ const LogIn = () => {
           </Button>
         </div>
         <Link to="/register">
-          <Button>Don't have an account?</Button>
+          <Button
+            style={{
+              backgroundColor: "#fff",
+              border: "1px solid #ff48ab",
+              color: "#000",
+            }}
+          >
+            Don't have an account?
+          </Button>
         </Link>
       </Form>
     </Wrapper>

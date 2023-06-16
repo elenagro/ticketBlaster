@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-import Wrapper from "../../../shared/components/FormElements/Wrapper";
 import Form from "../../../shared/components/FormElements/Form";
+import Wrapper from "../../../shared/components/FormElements/Wrapper";
 import Title from "../../../shared/components/FormElements/Title";
 import Input from "../../../shared/components/FormElements/Input";
 import Button from "../../../shared/components/FormElements/Button";
@@ -21,7 +21,15 @@ const ResetPassword = () => {
         />
         <Button type="submit">Reset Password</Button>
         <Link to="/log-in">
-          <Button>Back to log in</Button>
+          <Button
+            style={{
+              backgroundColor: "#fff",
+              border: "1px solid #ff48ab",
+              color: "#000",
+            }}
+          >
+            Back to log in
+          </Button>
         </Link>
       </Form>
     </Wrapper>
