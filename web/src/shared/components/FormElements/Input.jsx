@@ -14,6 +14,7 @@ const Input = (props) => {
         type={props.type}
         onChange={props.onChange}
         value={props.value}
+        style={props.style}
       />
     </div>
   );

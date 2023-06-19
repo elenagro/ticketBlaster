@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./LogIn.module.css";
 
 import Title from "../../../shared/components/FormElements/Title";
@@ -15,7 +15,12 @@ const LogIn = () => {
         <Title title="Log in" />
 
         <Input htmlFor="email" label="E-mail" id="email" type="text" />
-        <Input htmlFor="password" label="Password" id="password" type="text" />
+        <Input
+          htmlFor="password"
+          label="Password"
+          id="password"
+          type="password"
+        />
         <div className={styles["forgot-login"]}>
           <Link to="/forgot-password" className={styles["forgot-pass"]}>
             Forgot Password?

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom";
 
 import Form from "../../../shared/components/FormElements/Form";
 import Wrapper from "../../../shared/components/FormElements/Wrapper";
@@ -12,12 +12,17 @@ const ResetPassword = () => {
     <Wrapper>
       <Form>
         <Title title="Reset Password" />
-        <Input htmlFor="password" label="Password" id="password" type="text" />
+        <Input
+          htmlFor="password"
+          label="Password"
+          id="password"
+          type="password"
+        />
         <Input
           htmlFor="password2"
           label="Password"
           id="password2"
-          type="text"
+          type="password"
         />
         <Button type="submit">Reset Password</Button>
         <Link to="/log-in">

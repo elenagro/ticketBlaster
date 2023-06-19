@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom";
+import { Link } from "react-router-dom";
 
 import Form from "../../../shared/components/FormElements/Form";
 import Title from "../../../shared/components/FormElements/Title";

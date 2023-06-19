@@ -1,0 +1,32 @@
+.u-info {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.left-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.right-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+
+.btn-submit {
+  padding-top: 40px;
+}
+
+.reset-pass {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

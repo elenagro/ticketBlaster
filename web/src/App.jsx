@@ -1,35 +1,24 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch,
-} from "react-router-dom/cjs/react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-import Navigation from "./shared/components/Navigation/Navigation";
-import LogIn from "./main/pages/LogIn/LogIn";
+import { HomeLayout } from "./main/layouts/HomeLayout";
 import CreateAccount from "./main/pages/CreateAccount/CreateAccount";
 import ForgotPassword from "./main/pages/ForgotPassword/ForgotPassword";
+import LogIn from "./main/pages/LogIn/LogIn";
+import User from "./main/pages/User/User";
 
 const App = () => {
   return (
-    <Router>
-      <Navigation />
-      <main>
-        <Switch>
-          <Route path="/log-in" exact>
-            <LogIn />
-          </Route>
-          <Route path="/forgot-password" exact>
-            <ForgotPassword />
-          </Route>
-          <Route path="/register" exact>
-            <CreateAccount />
-          </Route>
-          <Redirect to="/" />
-        </Switch>
-      </main>
-    </Router>
+    <Routes>
+      <Route element={<HomeLayout />}>
+        <Route path="/" element={<LogIn />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+
+        <Route path="/register" element={<CreateAccount />} />
+
+        <Route path="/concerts" element={<User />} />
+      </Route>
+    </Routes>
   );
 };
 
