@@ -4,7 +4,7 @@ import styles from "./Form.module.css";
 
 const Form = (props) => {
   return (
-    <div className={styles["form-container"]}>
+    <div className={`${styles["form-container"]} ${props.className}`}>
       <form className={styles.form}>{props.children}</form>
     </div>
   );

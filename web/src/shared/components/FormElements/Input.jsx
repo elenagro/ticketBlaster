@@ -4,7 +4,7 @@ import styles from "./Input.module.css";
 
 const Input = (props) => {
   return (
-    <div className={styles["input-label"]}>
+    <div className={`${styles["input-label"]} ${props.className}`}>
       <label htmlFor={props.htmlFor} className={styles.label}>
         {props.label}
       </label>
