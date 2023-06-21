@@ -7,6 +7,7 @@
   width: 259px;
   height: 153px;
   display: flex;
+  flex-shrink: 0;
 }
 .right-card {
   /* width: 296px; */
@@ -20,6 +21,7 @@
   opacity: 1;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .card-title {
@@ -28,8 +30,6 @@
   letter-spacing: -1.32px;
   color: #000000;
   opacity: 1;
-  width: 75px;
-  height: 29px;
   margin: 0px;
 }
 

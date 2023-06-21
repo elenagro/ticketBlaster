@@ -7,6 +7,7 @@ import ForgotPassword from "./main/pages/ForgotPassword/ForgotPassword";
 import LogIn from "./main/pages/LogIn/LogIn";
 import User from "./main/pages/User/User";
 import Home from "./main/pages/Home/Home";
+import StandupComedies from "./main/pages/StandupComedy/StandupComedies";
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
         <Route path="/register" element={<CreateAccount />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/concerts" element={<User />} />
-        <Route path="/shows" />
+        <Route path="/comedies" element={<StandupComedies />} />
       </Route>
     </Routes>
   );

@@ -1,11 +1,6 @@
 .title {
-  top: 120px;
-  left: 360px;
-  height: 52px;
-  color: #000;
   text-align: left;
-  font: normal normal bold 44px/52px Lato;
+  font-size: 44px;
+  font-weight: 800;
   letter-spacing: -2.42px;
-
-  opacity: 1;
 }
