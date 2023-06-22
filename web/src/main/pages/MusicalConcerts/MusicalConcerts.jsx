@@ -1,15 +1,15 @@
 import React from "react";
 
 import Title from "../../../shared/FormElements/Title";
-import { EVENTS } from "./DUMMY_DATA";
-import styles from "./StandupComedies.module.css";
+import { EVENTS } from "../StandupComedy/DUMMY_DATA";
+import styles from "./MusicalConcerts.module.css";
 import Card from "../../../shared/UI/Card";
 
-const StandupComedies = (props) => {
+const MusicalConcerts = (props) => {
   return (
-    <div className={styles["comedies-container"]}>
-      <Title title="Stand-up Comedy" />
-      <div className={`${styles["main-comedies-grid"]} ${props.className}`}>
+    <div className={styles["concerts-container"]}>
+      <Title title="Musical Concerts" />
+      <div className={`${styles["main-concerts-grid"]} ${props.className}`}>
         {EVENTS.map((card) => (
           <Card
             key={card.id}
@@ -26,4 +26,4 @@ const StandupComedies = (props) => {
   );
 };
 
-export default StandupComedies;
+export default MusicalConcerts;

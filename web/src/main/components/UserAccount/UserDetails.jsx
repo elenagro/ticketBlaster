@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import Avatar from "../../../shared/components/UI/Avatar";
-import Button from "../../../shared/components/FormElements/Button";
-import Input from "../../../shared/components/FormElements/Input";
-import Title from "../../../shared/components/FormElements/Title";
+import Avatar from "../../../shared/UI/Avatar";
+import Button from "../../../shared/FormElements/Button";
+import Input from "../../../shared/FormElements/Input";
+import Title from "../../../shared/FormElements/Title";
 import ChangePassword from "./ChangePassword";
 
 import styles from "./UserDetails.module.css";

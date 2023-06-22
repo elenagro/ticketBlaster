@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Form from "../../../shared/components/FormElements/Form";
-import Title from "../../../shared/components/FormElements/Title";
-import Input from "../../../shared/components/FormElements/Input";
-import Button from "../../../shared/components/FormElements/Button";
+import Form from "../../../shared/FormElements/Form";
+import Title from "../../../shared/FormElements/Title";
+import Input from "../../../shared/FormElements/Input";
+import Button from "../../../shared/FormElements/Button";
 
 const ForgotPassword = () => {
   return (

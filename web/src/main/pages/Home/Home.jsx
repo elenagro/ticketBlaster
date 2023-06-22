@@ -1,13 +1,19 @@
 import React from "react";
 
 import Hero from "../../components/Events/Hero";
-import Card from "../../../shared/components/UI/Card";
+import MusicalConcerts from "../MusicalConcerts/MusicalConcerts";
+import StandupComedies from "../StandupComedy/StandupComedies";
+
+import styles from "./Home.module.css";
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Card />
+      <div className={styles["home-events"]}>
+        <MusicalConcerts className={styles.event} />
+        <StandupComedies className={styles.event} />
+      </div>
     </>
   );
 };

@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import Button from "../FormElements/Button";
 
 import styles from "./Navigation.module.css";
-import logo from "../../../assets/Path 1.svg";
+import logo from "../../assets/Path 1.svg";
 
 const Navigation = (props) => {
   return (

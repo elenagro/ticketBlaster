@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Wrapper from "../../../shared/components/FormElements/Wrapper";
+import Wrapper from "../../../shared/FormElements/Wrapper";
 import UserDetails from "../../components/UserAccount/UserDetails";
 
 import styles from "./User.module.css";

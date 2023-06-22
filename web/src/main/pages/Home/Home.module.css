@@ -1,0 +1,9 @@
+.home-events {
+  display: flex;
+  gap: 50px;
+}
+
+.event {
+  display: grid;
+  grid-template-columns: 1fr;
+}

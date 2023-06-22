@@ -1,7 +1,7 @@
 import React from "react";
 
-import Input from "../../../shared/components/FormElements/Input";
-import Button from "../../../shared/components/FormElements/Button";
+import Input from "../../../shared/FormElements/Input";
+import Button from "../../../shared/FormElements/Button";
 
 import styles from "./ChangePassword.module.css";
 
