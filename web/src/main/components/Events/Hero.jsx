@@ -15,7 +15,7 @@ const Hero = () => {
     <div className={styles["hero-container"]}>
       <img
         className={styles.hero}
-        src="https://www.photobox.co.uk/blog/wp-content/webp-express/webp-images/uploads/2017/07/concert-stage.jpg.webp"
+        src="https://img.freepik.com/free-photo/excited-audience-watching-confetti-fireworks-having-fun-music-festival-night-copy-space_637285-559.jpg?w=740&t=st=1687771518~exp=1687772118~hmac=4a7290acfe18ad1949e0b2c8802193c287288b245eb6020c5140df6b8246fc98"
         alt="hero"
       />
       <div className={styles.title}>
