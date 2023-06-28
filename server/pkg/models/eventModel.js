@@ -23,6 +23,9 @@ const eventSchema = new mongoose.Schema({
   location: {
     type: String,
   },
+  creator: {
+    type: String,
+  },
 });
 
 const Event = mongoose.model("event", eventSchema);
