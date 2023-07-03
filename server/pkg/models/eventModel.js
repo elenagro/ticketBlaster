@@ -23,7 +23,7 @@ const eventSchema = new mongoose.Schema({
   location: {
     type: String,
   },
-  creator: {
+  user_id: {
     type: String,
   },
 });

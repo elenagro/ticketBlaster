@@ -24,8 +24,7 @@ const userSchema = new mongoose.Schema({
   },
   is_admin: {
     type: Boolean,
-    enum: ["user", "admin"],
-    default: "user",
+    default: false,
   },
 });
 
