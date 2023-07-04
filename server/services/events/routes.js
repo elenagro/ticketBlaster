@@ -10,4 +10,4 @@ router.post("/new", eventHandler.createEvent);
 router.patch("/:id", eventHandler.updateEvent);
 router.delete("/:id", eventHandler.removeEvent);
 
-module.exports = router;
+module.exports = { router };
