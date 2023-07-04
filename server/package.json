@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node services/auth/index.js",
+    "dev": "nodemon services/auth/index.js"
   },
   "author": "Elena Grozdanoska",
   "license": "ISC",

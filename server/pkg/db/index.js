@@ -13,4 +13,4 @@ const init = () => {
   mongoose.connect(dsn);
 };
 
-module.exports = init;
+module.exports = { init };
