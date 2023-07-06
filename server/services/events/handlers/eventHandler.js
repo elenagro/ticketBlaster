@@ -1,5 +1,15 @@
 const Event = require("../../../pkg/models/eventModel");
 
+const getAllEvents = async (req, res) => {
+  try {
+    const allEvents = await Event.find().sort({ date: -1 });
+    res.status(200).send(allEvents);
+  } catch (err) {
+    console.log(err);
+    res.status(500).send("Internal Server Error");
+  }
+};
+
 const getConcertEvents = async (req, res) => {
   try {
     const concertEvents = await Event.find().sort({
@@ -74,6 +84,7 @@ const removeEvent = async (req, res) => {
 };
 
 module.exports = {
+  getAllEvents,
   getConcertEvents,
   getComedyEvents,
   getOneEvent,
