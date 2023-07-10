@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const jwt = require("express-jwt");
@@ -21,7 +22,7 @@ api.use(
   })
 );
 
-api.use("/api/v1/ticket-blaster/events", eventRoutes);
+api.use("/api/v1/events", eventRoutes);
 
 api.listen(process.env.EVENTS_PORT, (err) => {
   if (err) {

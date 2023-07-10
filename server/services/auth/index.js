@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const auth = require("./handlers/auth");
 const db = require("../../pkg/db");
@@ -15,8 +16,8 @@ api.use((req, res, next) => {
   next();
 });
 
-api.post("/api/v1/ticket-blaster/register", auth.register);
-api.post("/api/v1/ticket-blaster/log-in", auth.logIn);
+api.post("/api/v1/auth/register", auth.register);
+api.post("/api/v1/auth/log-in", auth.logIn);
 
 api.listen(process.env.AUTH_PORT, (err) => {
   if (err) {

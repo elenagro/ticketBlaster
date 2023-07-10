@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const db = require("../../pkg/db");
 const multer = require("./handlers/uploadHandler");
@@ -9,7 +10,7 @@ api.use(express.json());
 api.use(express.urlencoded({ extended: true }));
 api.use(express.static("images"));
 
-api.post("/api/v1/ticket-blaster/upload", multer.uploadImg, (req, res) =>
+api.post("/api/v1/upload", multer.uploadImg, (req, res) =>
   res.status(201).send("Successfully Uploaded Image")
 );
 
