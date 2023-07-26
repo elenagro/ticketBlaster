@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const userHandler = require("./handlers/userHandler");
 const db = require("../../pkg/db");
 const multer = require("../upload/handlers/uploadHandler");
@@ -7,6 +8,11 @@ const multer = require("../upload/handlers/uploadHandler");
 api = express();
 
 db.init();
+api.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 api.use(express.json());
 api.use(express.urlencoded({ extended: true }));

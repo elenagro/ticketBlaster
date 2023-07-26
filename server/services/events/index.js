@@ -11,8 +11,13 @@ db.init();
 
 const api = express();
 
+api.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
+
 api.use(express.json);
-api.use(cors());
 api.use(upload());
 
 api.use(

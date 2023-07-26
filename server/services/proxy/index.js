@@ -51,6 +51,13 @@ api.use(
   })
 );
 
+api.use(
+  "/",
+  proxy("http://localhost:3000", {
+    proxyReqPathResolver: (req) => `http://127.0.0.1:3000/${req.url}`,
+  })
+);
+
 api.listen(process.env.PORT, (err) => {
   if (err) {
     return console.log(err);

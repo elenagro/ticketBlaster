@@ -6,7 +6,7 @@ import axios from "axios";
 import Title from "../../../shared/FormElements/Title";
 import Input from "../../../shared/FormElements/Input";
 import Button from "../../../shared/FormElements/Button";
-
+import User from "../User/User";
 import Form from "../../../shared/FormElements/Form";
 
 const CreateAccount = () => {
@@ -25,7 +25,7 @@ const CreateAccount = () => {
     alert("Submitted");
     const configuration = {
       method: "post",
-      url: "/api/v1/auth/register",
+      url: "http://localhost:8000/api/v1/auth/register",
       data: {
         name,
         email,
@@ -34,22 +34,11 @@ const CreateAccount = () => {
     };
     axios(configuration)
       .then((result) => {
-        console.log(result);
+        setRegister(true);
       })
       .catch((error) => {
-        console.log(error);
+        error = new Error();
       });
-  };
-
-  const createNewUser = () => {
-    const { name, email, password } = newUser;
-    if (name && email && password) {
-      axios
-        .post("/api/v1/auth/register", newUser)
-        .then((res) => console.log(res));
-    } else {
-      console.log("Invalid input");
-    }
   };
 
   return (
@@ -99,8 +88,20 @@ const CreateAccount = () => {
           Already have an account?
         </Button>
       </Link>
+      {register && <User />}
     </Form>
   );
 };
 
 export default CreateAccount;
+
+// const createNewUser = () => {
+//   const { name, email, password } = newUser;
+//   if (name && email && password) {
+//     axios
+//       .post("/api/v1/auth/register", newUser)
+//       .then((res) => console.log(res));
+//   } else {
+//     console.log("Invalid input");
+//   }
+// };
