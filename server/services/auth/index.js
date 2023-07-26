@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require("express");
-const cors = require("cors");
+
 const auth = require("./handlers/auth");
 const db = require("../../pkg/db");
 const cookieParser = require("cookie-parser");
@@ -8,8 +8,6 @@ const cookieParser = require("cookie-parser");
 const api = express();
 
 db.init();
-
-api.use(cors({ origin: "http://localhost:3000" }));
 
 api.use(express.json());
 api.use(cookieParser());

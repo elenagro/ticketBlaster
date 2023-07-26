@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const morgan = require("morgan");
 const proxy = require("express-http-proxy");
 const cors = require("cors");
 
@@ -16,7 +17,7 @@ api.use(express.static("images"));
 
 api.use(
   "/api/v1/auth",
-  proxy(`http://127.0.0.1:${process.env.AUTH_PORT}`, {
+  proxy(`http://localhost:${process.env.AUTH_PORT}`, {
     proxyReqPathResolver: (req) => {
       return `/api/v1/auth/${req.url}`;
     },
@@ -25,7 +26,7 @@ api.use(
 
 api.use(
   "/api/v1/events",
-  proxy(`http://127.0.0.1:${process.env.EVENTS_PORT}`, {
+  proxy(`http://localhost:${process.env.EVENTS_PORT}`, {
     proxyReqPathResolver: (req) => {
       return `/api/v1/events/${req.url}`;
     },
@@ -34,7 +35,7 @@ api.use(
 
 api.use(
   "/api/v1/users",
-  proxy(`http://127.0.0.1:${process.env.USERS_PORT}`, {
+  proxy(`http://localhost:${process.env.USERS_PORT}`, {
     proxyReqPathResolver: (req) => {
       return `/api/v1/users/${req.url}`;
     },
@@ -43,7 +44,7 @@ api.use(
 
 api.use(
   "/api/v1/upload",
-  proxy(`http://127.0.0.1:${process.env.UPLOAD_PORT}`, {
+  proxy(`http://localhost:${process.env.UPLOAD_PORT}`, {
     proxyReqPathResolver: (req) => {
       return `/api/v1/upload/${req.url}`;
     },
