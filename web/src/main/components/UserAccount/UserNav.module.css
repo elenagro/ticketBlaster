@@ -1,0 +1,33 @@
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  width: inherit;
+}
+
+.title {
+  /* text-align: left */
+}
+
+.right-side-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 60px;
+  list-style: none;
+}
+
+.menu-link {
+  font-size: 18px;
+  list-style: none;
+  text-decoration: none;
+  text-align: left;
+  height: 22px;
+  color: #393939;
+  text-align: left;
+  font: normal normal bold 18px/22px Lato;
+  letter-spacing: -0.99px;
+  opacity: 1;
+  cursor: pointer;
+}

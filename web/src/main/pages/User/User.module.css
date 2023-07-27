@@ -4,23 +4,3 @@
   align-items: flex-start;
   justify-content: flex-end;
 }
-
-.right-side-menu {
-  display: flex;
-  gap: 13px;
-}
-
-.right-side-menu li {
-  font-size: 18px;
-  list-style: none;
-  text-decoration: none;
-  top: 146px;
-  left: 1267px;
-  height: 22px;
-  color: #393939;
-  text-align: left;
-  font: normal normal bold 18px/22px Lato;
-  letter-spacing: -0.99px;
-  opacity: 1;
-  cursor: pointer;
-}

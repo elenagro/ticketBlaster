@@ -24,7 +24,7 @@ const ChangePassword = (props) => {
           style={{ width: "226px" }}
         />
       </div>
-      <div>
+      <div className={styles["reset-pass-btn"]}>
         <Button
           type="submit"
           style={{ width: "128px", backgroundColor: "#000" }}

@@ -4,8 +4,7 @@ const cors = require("cors");
 const jwt = require("express-jwt");
 const upload = require("express-fileupload");
 const db = require("../../pkg/db");
-
-const eventRoutes = require("./routes");
+const eventHandler = require("./handlers/eventHandler");
 
 db.init();
 
@@ -27,7 +26,14 @@ api.use(
   })
 );
 
-api.use("/api/v1/events", eventRoutes);
+api.get("/api/v1/events/concerts", eventHandler.getConcertEvents);
+api.get("/api/v1/events/comedies", eventHandler.getComedyEvents);
+api.get("/api/v1/events/:id", eventHandler.getOneEvent);
+api.post("/api/v1/events/", eventHandler.createEvent);
+api.patch("/api/v1/events/:id", eventHandler.updateEvent);
+api.delete("/api/v1/events/:id", eventHandler.removeEvent);
+
+// api.use("/api/v1/events", eventRoutes);
 
 api.listen(process.env.EVENTS_PORT, (err) => {
   if (err) {

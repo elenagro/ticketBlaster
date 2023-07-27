@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import Avatar from "../../../shared/UI/Avatar";
 import Button from "../../../shared/FormElements/Button";
 import Input from "../../../shared/FormElements/Input";
-import Title from "../../../shared/FormElements/Title";
 import ChangePassword from "./ChangePassword";
-
+import Title from "../../../shared/FormElements/Title";
 import styles from "./UserDetails.module.css";
 
 const UserDetails = (props) => {
@@ -18,7 +17,6 @@ const UserDetails = (props) => {
 
   return (
     <React.Fragment>
-      <Title title="User Details" />
       <div className={styles["u-info"]}>
         <div className={styles["left-details"]}>
           <Avatar image="https://play-lh.googleusercontent.com/UjaAdTYsArv7zAJbqGWjQw2ftuOtnAlvokffC3TQQ2K12mwk0YdXUF2wZBTBA2kDZIk" />
