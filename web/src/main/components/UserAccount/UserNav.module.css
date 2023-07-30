@@ -31,3 +31,8 @@
   opacity: 1;
   cursor: pointer;
 }
+
+.menu-link:hover,
+.menu-link:active {
+  color: #ff48ab;
+}

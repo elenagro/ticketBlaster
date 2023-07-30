@@ -1,7 +1,8 @@
 .u-info {
-  width: 420px;
+  width: 520px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 30px;
   margin-top: 30px;
 }
@@ -24,12 +25,14 @@
 
 .btn-submit {
   padding-top: 40px;
+  width: 520px;
 }
 
 .reset-pass {
-  width: 420px;
+  width: 520px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   margin-top: 50px;
   gap: 30px;

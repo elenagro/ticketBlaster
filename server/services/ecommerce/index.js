@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const db = require("../../pkg/db");
+const ticketHandler = require("./handlers/ticketHandler");
 
 db.init();
 
@@ -13,6 +14,10 @@ api.use(
 );
 
 api.use(express.json());
+
+api.post("/api/v1/tickets/", ticketHandler.createTicket);
+api.patch("/api/v1/tickets/:ticketId", ticketHandler.updateIsPurchased);
+api.delete("/api/v1/tickets/:ticketId", ticketHandler.removeCartTicket);
 
 api.listen(process.env.TICKETS_PORT, (err) => {
   if (err) {

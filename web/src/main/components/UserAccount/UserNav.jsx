@@ -28,11 +28,8 @@ const UserNav = () => {
             Tickets History
           </Link>
         </li>
-        <li>
-          <Link to={`/concerts/${userId}`} className={styles["menu-link"]}>
-            User Details
-          </Link>
-        </li>
+        {/* /${userId} */}
+        <li></li>
         <li>
           <Link to="/" className={styles["menu-link"]}>
             Log Out

@@ -28,7 +28,7 @@ api.use(
 
 api.get("/api/v1/events/concerts", eventHandler.getConcertEvents);
 api.get("/api/v1/events/comedies", eventHandler.getComedyEvents);
-api.get("/api/v1/events/:id", eventHandler.getOneEvent);
+api.get("/api/v1/events/find/:id", eventHandler.getOneEvent);
 api.post("/api/v1/events/", eventHandler.createEvent);
 api.patch("/api/v1/events/:id", eventHandler.updateEvent);
 api.delete("/api/v1/events/:id", eventHandler.removeEvent);
