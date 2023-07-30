@@ -29,7 +29,11 @@ const UserNav = () => {
           </Link>
         </li>
         {/* /${userId} */}
-        <li></li>
+        <li>
+          <Link to={`/users`} className={styles["menu-link"]}>
+            User Details
+          </Link>
+        </li>
         <li>
           <Link to="/" className={styles["menu-link"]}>
             Log Out
