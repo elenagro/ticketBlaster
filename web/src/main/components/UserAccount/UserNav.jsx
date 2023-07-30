@@ -7,8 +7,8 @@ import Title from "../../../shared/FormElements/Title";
 const UserNav = () => {
   const { userId } = useParams();
   return (
-    <div className={styles["menu-grid"]}>
-      <Title title="User Details" className={styles.title} />
+    <div className={styles["menu"]}>
+      <Title title="User Details" />
       <ul className={styles["right-side-menu"]}>
         <li>
           <Link to="#" className={styles["menu-link"]}>
