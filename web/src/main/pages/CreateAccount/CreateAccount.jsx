@@ -13,21 +13,16 @@ const CreateAccount = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [register, setRegister] = useState("");
-  const [newUser, setNewUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
+  const [register, setRegister] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Submitted");
     const configuration = {
       method: "post",
-      url: "http://localhost:8000/api/v1/auth/register",
+      url: "http://localhost:5001/api/v1/auth/register",
       data: {
-        name,
+        full_name: name,
         email,
         password,
       },
@@ -42,66 +37,60 @@ const CreateAccount = () => {
   };
 
   return (
-    <Form onSubmit={(e) => handleSubmit(e)}>
-      <Title title="Create Account" />
-      <Input
-        htmlFor="name"
-        label="Full Name"
-        id="name"
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <Input
-        htmlFor="email"
-        label="E-mail"
-        id="email"
-        type="text"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <Input
-        htmlFor="password"
-        label="Password"
-        id="password"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <Input
-        htmlFor="password2"
-        label="Re-type Password"
-        id="password2"
-        type="password"
-      />
-      <Button type="submit" onClick={(e) => handleSubmit(e)}>
-        Create Account
-      </Button>
-      <Link to="/log-in">
-        <Button
-          style={{
-            backgroundColor: "#fff",
-            border: "1px solid #ff48ab",
-            color: "#000",
-          }}
-        >
-          Already have an account?
-        </Button>
-      </Link>
-      {register && <User />}
-    </Form>
+    <React.Fragment>
+      {register ? (
+        <User />
+      ) : (
+        <Form onSubmit={(e) => handleSubmit(e)}>
+          <Title title="Create Account" />
+          <Input
+            htmlFor="full_name"
+            label="Full Name"
+            id="full_name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <Input
+            htmlFor="email"
+            label="E-mail"
+            id="email"
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Input
+            htmlFor="password"
+            label="Password"
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Input
+            htmlFor="password2"
+            label="Re-type Password"
+            id="password2"
+            type="password"
+          />
+          <Button type="submit" onClick={(e) => handleSubmit(e)}>
+            Create Account
+          </Button>
+          <Link to="/log-in">
+            <Button
+              style={{
+                backgroundColor: "#fff",
+                border: "1px solid #ff48ab",
+                color: "#000",
+              }}
+            >
+              Already have an account?
+            </Button>
+          </Link>
+        </Form>
+      )}
+    </React.Fragment>
   );
 };
 
 export default CreateAccount;
-
-// const createNewUser = () => {
-//   const { name, email, password } = newUser;
-//   if (name && email && password) {
-//     axios
-//       .post("/api/v1/auth/register", newUser)
-//       .then((res) => console.log(res));
-//   } else {
-//     console.log("Invalid input");
-//   }
-// };

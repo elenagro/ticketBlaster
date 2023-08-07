@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./services/proxy/index.js & ./services/auth/index.js & ./services/ecommerce/index.js & ./services/events/index.js & ./services/upload/index.js & ./services/usres/index.js"
+    "start": "node ./services/proxy/index.js & ./services/auth/index.js & ./services/ecommerce/index.js & ./services/events/index.js & ./services/upload/index.js & ./services/users/index.js"
   },
   "author": "Elena Grozdanoska",
   "license": "ISC",

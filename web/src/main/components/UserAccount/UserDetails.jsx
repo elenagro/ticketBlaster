@@ -33,7 +33,12 @@ const UserDetails = (props) => {
         </div>
 
         <div className={styles["right-details"]}>
-          <Input htmlFor="name" label="Full Name" id="name" type="text" />
+          <Input
+            htmlFor="full_name"
+            label="Full Name"
+            id="full_name"
+            type="text"
+          />
           <Input htmlFor="email" label="E-mail" id="email" type="text" />
         </div>
       </div>
