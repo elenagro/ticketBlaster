@@ -111,13 +111,15 @@ li input {
 
 .right-side {
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   list-style: none;
 }
 
-/* ul li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-} */
+.icons {
+  /* filter: invert(77%) sepia(98%) saturate(1345%) hue-rotate(316deg); */
+  width: 22px;
+  height: 22px;
+  /* fill: #ff48ab; */
+}

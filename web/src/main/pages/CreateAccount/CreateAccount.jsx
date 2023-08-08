@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useAuth } from "../../store/auth-context";
 
 import Title from "../../../shared/FormElements/Title";
 import Input from "../../../shared/FormElements/Input";
@@ -13,7 +14,7 @@ const CreateAccount = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [register, setRegister] = useState(false);
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,16 +30,16 @@ const CreateAccount = () => {
     };
     axios(configuration)
       .then((result) => {
-        setRegister(true);
+        setIsLoggedIn(true);
       })
       .catch((error) => {
-        error = new Error();
+        console.error("Error registering:", error);
       });
   };
 
   return (
     <React.Fragment>
-      {register ? (
+      {isLoggedIn ? (
         <User />
       ) : (
         <Form onSubmit={(e) => handleSubmit(e)}>

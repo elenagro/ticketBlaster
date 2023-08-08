@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../main/store/auth-context";
 import Header from "./Header";
 
 import styles from "./Navigation.module.css";
 import logo from "../../assets/Path 1.svg";
+import userIcon from "../../assets/user.svg";
+import cartIcon from "../../assets/cart-shopping-solid.svg";
 
 const Navigation = (props) => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <Header>
       <div className={styles["logo-left-nav"]}>
@@ -30,16 +35,35 @@ const Navigation = (props) => {
         <li>
           <input placeholder="Search" className={styles["search-bar"]} />
         </li>
-        <li>
-          <Link to="/log-in">
-            <button className={styles.login}>Log in</button>
-          </Link>
-        </li>
-        <li>
-          <Link to="/register">
-            <button className={styles["create-account"]}>Create Account</button>
-          </Link>
-        </li>
+        {isLoggedIn ? (
+          <>
+            <li>
+              <Link to="/shopping-cart">
+                <img src={cartIcon} alt="Cart Icon" className={styles.icons} />
+              </Link>
+            </li>
+            <li>
+              <Link to="tickets-history">
+                <img src={userIcon} alt="User Icon" className={styles.icons} />
+              </Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link to="/log-in">
+                <button className={styles.login}>Log in</button>
+              </Link>
+            </li>
+            <li>
+              <Link to="/register">
+                <button className={styles["create-account"]}>
+                  Create Account
+                </button>
+              </Link>
+            </li>
+          </>
+        )}
       </ul>
     </Header>
   );
