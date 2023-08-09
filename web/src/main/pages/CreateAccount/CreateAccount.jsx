@@ -24,7 +24,7 @@ const CreateAccount = () => {
         email,
         password,
       })
-      .then((result) => {
+      .then(() => {
         setIsLoggedIn(true);
       })
       .catch((error) => {
@@ -79,6 +79,7 @@ const CreateAccount = () => {
                 border: "1px solid #ff48ab",
                 color: "#000",
               }}
+              type="submit"
             >
               Already have an account?
             </Button>
