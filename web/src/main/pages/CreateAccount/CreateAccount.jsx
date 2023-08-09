@@ -14,21 +14,16 @@ const CreateAccount = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { isLoggedIn, setIsLoggedIn, isLoggedOut } = useAuth();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Submitted");
-    const configuration = {
-      method: "post",
-      url: "http://localhost:5001/api/v1/auth/register",
-      data: {
+    axios
+      .post("http://localhost:5001/api/v1/auth/register", {
         full_name: name,
         email,
         password,
-      },
-    };
-    axios(configuration)
+      })
       .then((result) => {
         setIsLoggedIn(true);
       })
@@ -39,7 +34,7 @@ const CreateAccount = () => {
 
   return (
     <React.Fragment>
-      {isLoggedIn ? (
+      {isLoggedIn && !isLoggedOut ? (
         <User />
       ) : (
         <Form onSubmit={(e) => handleSubmit(e)}>
@@ -95,3 +90,24 @@ const CreateAccount = () => {
 };
 
 export default CreateAccount;
+
+// const handleSubmit = (e) => {
+//   e.preventDefault();
+//   alert("Submitted");
+//   const configuration = {
+//     method: "post",
+//     url: "http://localhost:5001/api/v1/auth/register",
+//     data: {
+//       full_name: name,
+//       email,
+//       password,
+//     },
+//   };
+//   axios(configuration)
+//     .then((result) => {
+//       setIsLoggedIn(true);
+//     })
+//     .catch((error) => {
+//       console.error("Error registering:", error);
+//     });
+// };

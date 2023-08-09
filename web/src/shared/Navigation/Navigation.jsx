@@ -9,7 +9,7 @@ import userIcon from "../../assets/user.svg";
 import cartIcon from "../../assets/cart-shopping-solid.svg";
 
 const Navigation = (props) => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, isLoggedOut } = useAuth();
 
   return (
     <Header>
@@ -35,7 +35,7 @@ const Navigation = (props) => {
         <li>
           <input placeholder="Search" className={styles["search-bar"]} />
         </li>
-        {isLoggedIn ? (
+        {isLoggedIn && !isLoggedOut ? (
           <>
             <li>
               <Link to="/shopping-cart">
@@ -43,7 +43,7 @@ const Navigation = (props) => {
               </Link>
             </li>
             <li>
-              <Link to="tickets-history">
+              <Link to="/tickets-history">
                 <img src={userIcon} alt="User Icon" className={styles.icons} />
               </Link>
             </li>
@@ -61,7 +61,7 @@ const Navigation = (props) => {
                   Create Account
                 </button>
               </Link>
-            </li>
+            </li>{" "}
           </>
         )}
       </ul>

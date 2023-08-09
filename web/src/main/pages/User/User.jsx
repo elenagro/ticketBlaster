@@ -18,5 +18,4 @@ const User = () => {
     </Wrapper>
   );
 };
-
 export default User;

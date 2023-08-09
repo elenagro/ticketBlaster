@@ -1,11 +1,18 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { useAuth } from "../../store/auth-context";
 import styles from "./UserNav.module.css";
 
 import Title from "../../../shared/FormElements/Title";
 
 const UserNav = () => {
   const { userId } = useParams();
+  const { isLoggedIn, isLoggedOut, setIsLoggedOut } = useAuth();
+
+  const handleLogOut = () => {
+    setIsLoggedOut(true);
+  };
+
   return (
     <div className={styles["menu"]}>
       <Title title="User Details" />
@@ -34,11 +41,19 @@ const UserNav = () => {
             User Details
           </Link>
         </li>
-        <li>
-          <Link to="/" className={styles["menu-link"]}>
-            Log Out
-          </Link>
-        </li>
+        {isLoggedIn && !isLoggedOut && (
+          <>
+            <li>
+              <Link
+                to="/"
+                className={styles["menu-link"]}
+                onClick={handleLogOut}
+              >
+                Log Out
+              </Link>
+            </li>
+          </>
+        )}
       </ul>
     </div>
   );
