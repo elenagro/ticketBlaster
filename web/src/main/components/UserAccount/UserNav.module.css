@@ -31,3 +31,8 @@
 .menu-link:active {
   color: #ff48ab;
 }
+
+.active-link {
+  font-weight: bold;
+  color: #ff48ab;
+}

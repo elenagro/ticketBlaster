@@ -4,8 +4,9 @@ import { useAuth } from "../../store/auth-context";
 import styles from "./UserNav.module.css";
 
 import Title from "../../../shared/FormElements/Title";
+import Button from "../../../shared/FormElements/Button";
 
-const UserNav = () => {
+const UserNav = ({ activeMenuLink, onMenuClick }) => {
   const { userId } = useParams();
   const { isLoggedIn, isLoggedOut, setIsLoggedOut } = useAuth();
 
@@ -15,31 +16,46 @@ const UserNav = () => {
 
   return (
     <div className={styles["menu"]}>
-      <Title title="User Details" />
+      <Title title={activeMenuLink} />
+      {activeMenuLink === "Events" && (
+        <Link to={`/create-event/${userId}`}>
+          <Button>Create Event</Button>
+        </Link>
+      )}
+
       <ul className={styles["right-side-menu"]}>
-        <li>
-          <Link to="#" className={styles["menu-link"]}>
-            Events
-          </Link>
+        <li
+          className={`${styles["menu-link"]} ${
+            activeMenuLink === "Events" ? styles["active-link"] : ""
+          }`}
+          onClick={() => onMenuClick("Events")}
+        >
+          Events
         </li>
-        <li>
-          <Link to="#" className={styles["menu-link"]}>
-            Users
-          </Link>
+        <li
+          className={`${styles["menu-link"]} ${
+            activeMenuLink === "Users" ? styles["active-link"] : ""
+          }`}
+          onClick={() => onMenuClick("Users")}
+        >
+          Users
         </li>
-        <li>
-          <Link
-            to={`/tickets-history/${userId}`}
-            className={styles["menu-link"]}
-          >
-            Tickets History
-          </Link>
+        <li
+          className={`${styles["menu-link"]} ${
+            activeMenuLink === "Tickets History" ? styles["active-link"] : ""
+          }`}
+          onClick={() => onMenuClick("Tickets History")}
+        >
+          Tickets History
         </li>
         {/* /${userId} */}
-        <li>
-          <Link to={`/users`} className={styles["menu-link"]}>
-            User Details
-          </Link>
+        <li
+          className={`${styles["menu-link"]} ${
+            activeMenuLink === "User Details" ? styles["active-link"] : ""
+          }`}
+          onClick={() => onMenuClick("User Details")}
+        >
+          User Details
         </li>
         {isLoggedIn && !isLoggedOut && (
           <>

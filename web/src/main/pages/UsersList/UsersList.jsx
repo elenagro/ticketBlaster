@@ -1,10 +1,7 @@
 import React from "react";
 
-import Avatar from "../../../shared/UI/Avatar";
-import Button from "../../../shared/FormElements/Button";
-
 const UsersList = () => {
-  return;
+  return <p>Users list</p>;
 };
 
 export default UsersList;
