@@ -5,14 +5,17 @@ const AuthContext = createContext({
   setIsLoggedIn: () => {},
   isLoggedOut: false,
   setIsLoggedOut: () => {},
-  menuContent: null,
+  menuContent: "User Details",
   setMenuContent: () => {},
+  activeMenuLink: "User Details",
+  setActiveMenuLink: () => {},
 });
 
 export const AuthContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoggedOut, setIsLoggedOut] = useState(false);
-  const [menuContent, setMenuContent] = useState(null);
+  const [menuContent, setMenuContent] = useState("User Details");
+  const [activeMenuLink, setActiveMenuLink] = useState("User Details");
 
   return (
     <AuthContext.Provider
@@ -23,6 +26,8 @@ export const AuthContextProvider = ({ children }) => {
         setIsLoggedOut,
         menuContent,
         setMenuContent,
+        activeMenuLink,
+        setActiveMenuLink,
       }}
     >
       {children}

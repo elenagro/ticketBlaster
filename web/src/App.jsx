@@ -10,6 +10,9 @@ import ForgotPassword from "./main/pages/ForgotPassword/ForgotPassword";
 import Home from "./main/pages/Home/Home";
 import StandupComedies from "./main/pages/StandupComedy/StandupComedies";
 import MusicalConcerts from "./main/pages/MusicalConcerts/MusicalConcerts";
+import Users from "./main/pages/UsersList/UsersList";
+import Events from "./main/pages/Events/Events";
+import TicketsHistory from "./main/pages/TicketsHistory/TicketsHistory";
 
 const App = () => {
   return (
@@ -19,12 +22,14 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/log-in" element={<LogIn />} />
           <Route path="/register" element={<CreateAccount />} />
+          <Route path="/events" element={<Events />} />
           <Route path="/user/:userId" element={<User />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/concerts" element={<MusicalConcerts />} />
           {/* /:userId */}
-          <Route path="/users" element={<User />} />
+          <Route path="/users" element={<Users />} />
           <Route path="/comedies" element={<StandupComedies />} />
+          <Route path="/tickets-history" element={<TicketsHistory />} />
         </Route>
       </Routes>
     </AuthContextProvider>

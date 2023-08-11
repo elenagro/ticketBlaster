@@ -6,9 +6,9 @@ import styles from "./UserNav.module.css";
 import Title from "../../../shared/FormElements/Title";
 import Button from "../../../shared/FormElements/Button";
 
-const UserNav = ({ activeMenuLink, onMenuClick }) => {
+const UserNav = ({ onMenuClick }) => {
   const { userId } = useParams();
-  const { isLoggedIn, isLoggedOut, setIsLoggedOut } = useAuth();
+  const { isLoggedIn, isLoggedOut, setIsLoggedOut, activeMenuLink } = useAuth();
 
   const handleLogOut = () => {
     setIsLoggedOut(true);
