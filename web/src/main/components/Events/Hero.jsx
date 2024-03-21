@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Button from "../../../shared/FormElements/Button";
 import styles from "./Hero.module.css";
@@ -27,7 +28,9 @@ const Hero = () => {
         </h4>
       </div>
       <div className={styles["btn-hero-container"]}>
-        <Button className={styles["btn-hero"]}>Get tickets</Button>
+        <Link to={`/event-details/17`}>
+          <Button className={styles["btn-hero"]}>Get tickets</Button>
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import { useAuth } from "../../main/store/auth-context";
 import Header from "./Header";
 
@@ -10,6 +10,17 @@ import cartIcon from "../../assets/cart-shopping-solid.svg";
 
 const Navigation = (props) => {
   const { isLoggedIn, isLoggedOut } = useAuth();
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate(); // useNavigate hook for navigation
+
+  const handleSearchInputChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    navigate(`/search-results?search=${searchQuery}`);
+  };
 
   return (
     <Header>
@@ -31,39 +42,39 @@ const Navigation = (props) => {
         </ul>
       </div>
 
+      <form onSubmit={handleSearchSubmit} className={styles["search-form"]}>
+        <input
+          placeholder="Search"
+          className={styles["search-bar"]}
+          value={searchQuery}
+          onChange={handleSearchInputChange}
+        />
+      </form>
+
       <ul className={styles["right-side"]}>
         <li>
-          <input placeholder="Search" className={styles["search-bar"]} />
-        </li>
-        {isLoggedIn && !isLoggedOut ? (
-          <>
-            <li>
+          {isLoggedIn && !isLoggedOut ? (
+            <>
               <Link to="/shopping-cart">
                 <img src={cartIcon} alt="Cart Icon" className={styles.icons} />
               </Link>
-            </li>
-            <li>
               <Link to="/tickets-history">
                 <img src={userIcon} alt="User Icon" className={styles.icons} />
               </Link>
-            </li>
-          </>
-        ) : (
-          <>
-            <li>
+            </>
+          ) : (
+            <>
               <Link to="/log-in">
                 <button className={styles.login}>Log in</button>
               </Link>
-            </li>
-            <li>
               <Link to="/register">
                 <button className={styles["create-account"]}>
                   Create Account
                 </button>
               </Link>
-            </li>{" "}
-          </>
-        )}
+            </>
+          )}
+        </li>
       </ul>
     </Header>
   );

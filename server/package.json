@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./services/proxy/index.js & ./services/auth/index.js & ./services/ecommerce/index.js & ./services/events/index.js & ./services/upload/index.js & ./services/users/index.js"
+    "start": "concurrently \"node ./services/auth/index.js\" \"node ./services/proxy/index.js\" \"node ./services/events/index.js\" \"node ./services/users/index.js\" \"node ./services/tickets/index.js\" \"node ./services/upload/index.js\""
   },
   "author": "Elena Grozdanoska",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^8.2.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "crypto-random-string": "^5.0.0",

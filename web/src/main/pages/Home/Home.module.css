@@ -1,5 +1,12 @@
 .home-events {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.events-flex {
   display: flex;
+  flex-direction: column;
   gap: 50px;
 }
 

@@ -13,6 +13,8 @@ import MusicalConcerts from "./main/pages/MusicalConcerts/MusicalConcerts";
 import Users from "./main/pages/UsersList/UsersList";
 import Events from "./main/pages/Events/Events";
 import TicketsHistory from "./main/pages/TicketsHistory/TicketsHistory";
+import EventDetails from "./main/pages/EventDetails/EventDetails";
+import SearchResults from "./main/pages/SearchResults/SearchResults";
 
 const App = () => {
   return (
@@ -26,6 +28,8 @@ const App = () => {
           <Route path="/user/:userId" element={<User />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/concerts" element={<MusicalConcerts />} />
+          <Route path="/event-details/:id" element={<EventDetails />} />
+          <Route path="/search-results" element={<SearchResults />} />
           {/* /:userId */}
           <Route path="/users" element={<Users />} />
           <Route path="/comedies" element={<StandupComedies />} />

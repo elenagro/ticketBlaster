@@ -52,6 +52,10 @@
   border-radius: 21px;
   opacity: 1;
   border: none;
+  padding: 15px;
+}
+.search-bar:focus {
+  outline: none;
 }
 
 li input::placeholder {
@@ -97,6 +101,7 @@ li input {
   letter-spacing: -0.88px;
   color: #ffffff;
   cursor: pointer;
+  margin-left: 15px;
 }
 
 .left-side {

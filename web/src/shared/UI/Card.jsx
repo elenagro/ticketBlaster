@@ -3,6 +3,7 @@ import React from "react";
 import Button from "../FormElements/Button";
 
 import styles from "./Card.module.css";
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
   return (
@@ -24,7 +25,9 @@ const Card = (props) => {
         </div>
         <div className={styles["card-bottom"]}>
           <span className={styles["card-location"]}>{props.date}</span>
-          <Button className={styles["card-btn"]}>Get tickets</Button>
+          <Link to={`/event-details/${props.id}`}>
+            <Button className={styles["card-btn"]}>Get tickets</Button>
+          </Link>
         </div>
       </div>
     </div>
