@@ -10,7 +10,6 @@
   flex-shrink: 0;
 }
 .right-card {
-  /* width: 296px; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

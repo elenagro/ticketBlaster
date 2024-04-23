@@ -33,8 +33,6 @@ api.post("/api/v1/events/", eventHandler.createEvent);
 api.patch("/api/v1/events/:id", eventHandler.updateEvent);
 api.delete("/api/v1/events/:id", eventHandler.removeEvent);
 
-// api.use("/api/v1/events", eventRoutes);
-
 api.listen(process.env.EVENTS_PORT, (err) => {
   if (err) {
     return console.log(err);
